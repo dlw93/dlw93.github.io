@@ -1,0 +1,33 @@
+table {
+    border-collapse: collapse;
+    border: none;
+    margin: 0 auto
+}
+
+p {
+    margin-bottom: 0;
+}
+
+span {
+    color: #262626;
+}
+
+span.title {
+    font-size: 26.0pt;
+    font-family: "Segoe UI Light",sans-serif;
+}
+
+span.title.section {
+    font-size: 14.0pt;
+    font-family: "Segoe UI Semilight",sans-serif;
+}
+
+span.key {
+    font-size: 10pt;
+    font-family: "Segoe UI",sans-serif;
+}
+
+span.value {
+    font-size: 10pt;
+    font-family: "Segoe UI",sans-serif;
+}
