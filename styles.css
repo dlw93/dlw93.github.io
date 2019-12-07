@@ -7,10 +7,28 @@ table {
     margin: auto;
 }
 
-span.value {
-    font-family: source-sans-pro, monospace;
-    font-weight: 300;
-    font-size: 10pt;
+tr.caption {
+    height: 1in;
+}
+
+tr.caption span {
+    font-size:26.0pt;
+    font-family: source-code-pro, monospace;
+    font-style: normal;
+    font-weight: 900;
+}
+
+tr.caption span.dark {
+    color:#404040;
+}
+
+
+tr.caption span.light {
+    color:#767171;
+}
+
+tr.section.title {
+    padding-top: 10px;
 }
 
 tr.section.title > td {
@@ -20,8 +38,7 @@ tr.section.title > td {
 
 tr.section.title > td > p {
     margin-bottom: 0;
-    margin-bottom: 0;
-    line-height: normal
+    line-height: normal;
 }
 
 tr.section.title > td > p > span {
@@ -30,4 +47,28 @@ tr.section.title > td > p > span {
     font-size: 14.0pt;
     color: #404040;
     letter-spacing: -.6pt;
+}
+
+td.key span {
+    font-family: source-code-pro, monospace;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 9pt;
+    margin-inline-start: 0.05in;
+}
+
+td.key p {
+    margin-block-start: .7em;
+    margin-block-end: 0;
+}
+
+td.value span {
+    font-family: source-sans-pro, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10.0pt;
+}
+
+td.value p {
+    margin: .7em 0 0 0;
 }
