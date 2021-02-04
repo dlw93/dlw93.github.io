@@ -17,6 +17,11 @@
     margin: 0.75in;
 }
 
+a {
+    text-decoration: none;
+    color: #000;
+}
+
 tr.caption {
     height: 0.75in;
 }
@@ -65,7 +70,6 @@ td.key span {
     font-style: normal;
     font-weight: 600;
     font-size: 9pt;
-    /* margin-inline-start: 0.05in; */
 }
 
 td.key p {
