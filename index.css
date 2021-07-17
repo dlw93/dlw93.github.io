@@ -1,0 +1,67 @@
+@import url("./styles/fonts.css");
+
+body {
+    background-color: #fcfcfc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+article {
+    width: 217mm; /* for testing */
+}
+
+article a {
+    text-decoration: none;
+    color: inherit;
+}
+
+article > h1 {
+    font-size: 26.0pt;
+    font-family: source-code-pro, monospace;
+    font-style: normal;
+    font-weight: 900;
+    color: #404040;
+}
+
+article > section > h2 {
+    font-family: source-code-pro, monospace;
+    font-weight: 600;
+    font-size: 14.0pt;
+    color: #404040;
+    letter-spacing: -.6pt;
+    line-height: normal;
+}
+
+article dl {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+article dt {
+    font-family: source-code-pro, monospace;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 9pt;
+
+    flex-basis: 20%;
+    padding: 2px 4px;
+}
+
+article dd {
+    font-family: source-sans, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10.0pt;
+
+    flex-basis: 70%;
+    flex-grow: 1;
+}
+
+article dt + dd + dd {
+    font-style: italic;
+}
+
+article dt + dd + dd + dd {
+    font-style: italic;
+}
