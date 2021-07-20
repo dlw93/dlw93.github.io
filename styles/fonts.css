@@ -1,24 +1,21 @@
-@font-face{
+@font-face {
     font-family: source-code-pro;
-    font-style: normal;
     font-weight: 600;
     src: url("/assets/fonts/SourceCodePro-Semibold.ttf.woff2") format("woff2");
 }
 
-@font-face{
+@font-face {
     font-family: source-code-pro;
     font-weight: 900;
-    font-style: normal;
     src: url("/assets/fonts/SourceCodePro-Black.ttf.woff2") format("woff2");
 }
 
-@font-face{
+@font-face {
     font-family: source-sans;
-    font-style: normal;
     src: url("/assets/fonts/SourceSans3-Regular.ttf.woff2") format("woff2");
 }
 
-@font-face{
+@font-face {
     font-family: source-sans;
     font-style: italic;
     src: url("/assets/fonts/SourceSans3-It.ttf.woff2") format("woff2");
