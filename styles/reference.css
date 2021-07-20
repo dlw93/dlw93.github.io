@@ -1,0 +1,41 @@
+body {
+    counter-reset: references;
+}
+
+.reference {
+    counter-increment: references;
+    display: list-item;
+    margin-inline-start: 1.5em;
+}
+
+.reference::marker {
+    content: "[" counter(references) "]  ";
+    text-align: end;
+}
+
+.reference > .title {
+    font-style: italic;
+}
+
+.reference > .title::before {
+    content: "“";
+    margin-inline-end: -0.5ch;
+}
+
+.reference > .title::after {
+    content: ".”";
+    display: inline-block;
+    margin-inline-start: -0.5ch;
+}
+
+.reference > .date::before {
+    content: "(";
+}
+
+.reference > .date::after {
+    content: "):";
+}
+
+.reference > .pages::after {
+    content: ".";
+}
