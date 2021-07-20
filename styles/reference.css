@@ -4,25 +4,16 @@ body {
 
 .reference {
     counter-increment: references;
-    display: inline-flex;
-    flex-wrap: wrap;
-    gap: 0 0.7ch;
-    margin-inline-start: 1.7em;
+    display: list-item;
+    margin-inline-start: 1.5em;
 }
 
-.reference::before {
-    content: "[" counter(references) "]";
+.reference::marker {
+    content: "[" counter(references) "]  ";
     text-align: end;
-    margin-inline-start: -1.7em;
-    margin-inline-end: 0.35ch;
-}
-
-.reference > .author {
-    order: 1;
 }
 
 .reference > .title {
-    order: 2;
     font-style: italic;
 }
 
@@ -33,15 +24,8 @@ body {
 
 .reference > .title::after {
     content: ".”";
+    display: inline-block;
     margin-inline-start: -0.5ch;
-}
-
-.reference > .journal {
-    order: 3;
-}
-
-.reference > .date {
-    order: 4;
 }
 
 .reference > .date::before {
@@ -50,10 +34,6 @@ body {
 
 .reference > .date::after {
     content: "):";
-}
-
-.reference > .pages {
-    order: 5;
 }
 
 .reference > .pages::after {
