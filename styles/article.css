@@ -64,11 +64,10 @@ article dt + dd + dd + dd {
     font-style: italic;
     grid-column: 2;
     margin-block-start: -0.55em;
-    margin-inline-start: 1em;
 }
 
-article dt + dd + dd + dd > cv-tag:first-of-type {
-    margin-left: -1.15em;
+article dt ~ dd.indent {
+    margin-inline-start: 1em;
 }
 
 article dd > cv-tag:not(:first-of-type) {
