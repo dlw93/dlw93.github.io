@@ -1,254 +1,365 @@
 <!DOCTYPE html>
 <html lang="en-GB">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width" />
-        <title>Curriculum Vitae | David Luis Wiegandt</title>
-        <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico" />
-        <link rel="stylesheet" href="index.css" />
-    </head>
 
-    <body>
-        <article>
-            <h1><span>Curriculum</span>&nbsp;<span>Vitae</span></h1>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Curriculum Vitae | David Luis Wiegandt</title>
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="/index.js" defer></script>
+</head>
 
-            <section>
-                <h2>Personal Data</h2>
+<body>
+    <template id="cv-tag">
+        <style>
+            :host {
+                background-color: #aeaeae;
+                color: #fff;
+                padding: 0 0.2rem;
+                font-weight: 600;
+                font-style: normal;
+                font-variant: small-caps;
+                border-radius: 0.5rem;
+                font-size: 0.7rem;
+                box-sizing: border-box;
+                border: #a8a8a8 .1em solid;
+                cursor: pointer;
+            }
+        </style>
+        <slot>&hellip;</slot>
+    </template>
 
-                <dl>
-                    <dt>Name</dt>
-                    <dd>David Luis Wiegandt</dd>
+    <article>
+        <h1><span>Curriculum</span>&nbsp;<span>Vitae</span></h1>
 
-                    <dt>Born</dt>
-                    <dd>16.09.1993 in Berlin</dd>
+        <section>
+            <h2>Personal Data</h2>
 
-                    <dt>Website</dt>
-                    <dd>
-                        <a href="https://dlw93.github.io">dlw93.github.io</a>
-                    </dd>
+            <dl>
+                <dt>Name</dt>
+                <dd>David Luis Wiegandt</dd>
 
-                    <dt>GitHub</dt>
-                    <dd>
-                        <a href="https://github.com/dlw93">github.com/dlw93</a>
-                    </dd>
+                <dt>Born</dt>
+                <dd>16.09.1993 in Berlin</dd>
 
-                    <dt>LinkedIn</dt>
-                    <dd>
-                        <a href="https://www.linkedin.com/in/dlwiegandt">www.linkedin.com/in/dlwiegandt</a>
-                    </dd>
-                </dl>
-            </section>
+                <dt>Website</dt>
+                <dd>
+                    <a href="https://dlw93.github.io">dlw93.github.io</a>
+                </dd>
 
-            <section>
-                <h2>Education</h2>
+                <dt>GitHub</dt>
+                <dd>
+                    <a href="https://github.com/dlw93">github.com/dlw93</a>
+                </dd>
 
-                <dl>
-                    <dt>10/2016 &mdash; present</dt>
-                    <dd>
-                        Master's Studies of Computer Science,
-                        <a href="https://www.hu-berlin.de">Humboldt-Universität zu Berlin</a>
-                    </dd>
-                    <dd>Current average grade of 1.1</dd>
-                    <dd>Thesis: &ldquo;Distributed Instance-Optimal Join Processing&rdquo; (in progress)</dd>
+                <dt>LinkedIn</dt>
+                <dd>
+                    <a href="https://www.linkedin.com/in/dlwiegandt">www.linkedin.com/in/dlwiegandt</a>
+                </dd>
+            </dl>
+        </section>
 
-                    <dt>10/2012 &mdash; 06/2016</dt>
-                    <dd>
-                        Bachelor's Studies of Computer Science,
-                        <a href="https://www.hu-berlin.de">Humboldt-Universität zu Berlin</a>
-                    </dd>
-                    <dd>Bachelor of Science (2.2)</dd>
-                    <dd>Thesis: &ldquo;Local Graph Patterns for Scientific Workflow Similarity Search&rdquo; (graded 1.0)</dd>
+        <section class="detailed">
+            <h2>Education</h2>
 
-                    <dt>08/2004 &mdash; 06/2012</dt>
-                    <dd><a href="https://www.plg-berlin.de">Primo-Levi-Gymnasium</a>, Berlin</dd>
-                    <dd>Abitur (2.2)</dd>
-                </dl>
-            </section>
+            <dl>
+                <dt>10/2016 &mdash; present</dt>
+                <dd>
+                    Master's Studies of Computer Science,
+                    <a href="https://www.hu-berlin.de">Humboldt-Universität zu Berlin</a>
+                </dd>
+                <dd>Current average grade of 1.1</dd>
+                <dd>Thesis: &ldquo;Distributed Instance-Optimal Join Processing&rdquo; (in progress)</dd>
 
-            <section>
-                <h2>Work Experience</h2>
+                <dt>10/2012 &mdash; 06/2016</dt>
+                <dd>
+                    Bachelor's Studies of Computer Science,
+                    <a href="https://www.hu-berlin.de">Humboldt-Universität zu Berlin</a>
+                </dd>
+                <dd>Bachelor of Science (2.2)</dd>
+                <dd>Thesis: &ldquo;Local Graph Patterns for Scientific Workflow Similarity Search&rdquo; (graded 1.0)
+                </dd>
 
-                <dl>
-                    <dt>06/2022 &mdash; 12/2022</dt>
-                    <dd>
-                        <a href="https://www.psienergy.de">PSI Energie EE, Berlin</a>
-                    </dd>
-                    <dd>
-                        Software development in different projects, mainly using TypeScript with Angular and some C++
-                    </dd>
-                    
-                    <dt>10/2021 &mdash; 03/2022</dt>
-                    <dd>
-                        <a href="https://neon.dev">NEON Software Solutions GmbH, Berlin</a>
-                    </dd>
-                    <dd>
-                        Backend development in different projects, e.g. <a href="https://www.finanznachrichten.de/nachrichten-2021-09/54032837-pta-news-aurenia-se-berliner-entwickeln-zukunftsweisende-app-karmadise-die-zu-guten-taten-anregt-015.htm">Karmadise</a>
-                    </dd>
+                <dt>08/2004 &mdash; 06/2012</dt>
+                <dd><a href="https://www.plg-berlin.de">Primo-Levi-Gymnasium</a>, Berlin</dd>
+                <dd>Abitur (2.2)</dd>
+            </dl>
+        </section>
 
-                    <dt>06/2021 &mdash; 10/2021</dt>
-                    <dd>
-                        <a href="https://www.berlin.de/ba-pankow/politik-und-verwaltung/aemter/gesundheitsamt">
-                            Gesundheitsamt Pankow <i>(Public Health Office Pankow)</i>, Berlin
-                        </a>
-                    </dd>
-                    <dd>
-                        Automation and streamlining of workflows for early detection and management of SARS-CoV-2 infection chains
-                    </dd>
+        <section class="detailed">
+            <h2>Work Experience</h2>
 
-                    <dt>04/2020 &mdash; 03/2021</dt>
-                    <dd>
-                        <a href="https://neurologie.charite.de/forschung/arbeitsgruppen/bewegungsstoerungen_andrea_kuehn">
-                            Department of Neurology, Charité &mdash; Universitätsmedizin Berlin
-                        </a>
-                    </dd>
-                    <dd>
-                        Automated report generation for outpatient deep brain stimulation visits and development of a web app for
-                        domain-specific patient information management
-                    </dd>
+            <dl>
+                <dt>06/2022 &mdash; 12/2022</dt>
+                <dd>
+                    <a href="https://www.psienergy.de">PSI Energie EE, Berlin</a>
+                </dd>
+                <dd>
+                    Participation in the development and maintenance of different products
+                </dd>
+                <dd>
+                    <cv-tag>TypeScript</cv-tag>
+                    <cv-tag>Angular</cv-tag>
+                    <cv-tag>C&plus;&plus;</cv-tag>
+                    <cv-tag>Docker</cv-tag>
+                    <cv-tag>Java</cv-tag>
+                    <cv-tag>PowerShell</cv-tag>
+                </dd>
 
-                    <dt>06/2015 &mdash; 12/2019</dt>
-                    <dd>
-                        <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi">
-                            Knowledge Management in Bioinformatics, Humboldt-Universität zu Berlin
-                        </a>
-                    </dd>
-                    <dd>
-                        Collaboration in various research projects and work as a tutor in different courses at the chair of &ldquo;Knowledge
-                        Management in Bioinformatics&rdquo; led by Prof. Dr. Ulf Leser
-                    </dd>
+                <dt>10/2021 &mdash; 03/2022</dt>
+                <dd>
+                    <a href="https://neon.dev">NEON Software Solutions GmbH, Berlin</a>
+                </dd>
+                <dd>
+                    Backend development in different projects, e.g. <a
+                        href="https://www.finanznachrichten.de/nachrichten-2021-09/54032837-pta-news-aurenia-se-berliner-entwickeln-zukunftsweisende-app-karmadise-die-zu-guten-taten-anregt-015.htm">Karmadise</a>
+                </dd>
+                <dd>
+                    <cv-tag>TypeScript</cv-tag>
+                    <cv-tag>MongoDB</cv-tag>
+                    <cv-tag>Docker</cv-tag>
+                    <cv-tag>Node.js</cv-tag>
+                    <cv-tag>Python</cv-tag>
+                    <cv-tag>AWS</cv-tag>
+                </dd>
 
-                    <dt>08/2016 &mdash; 11/2016</dt>
-                    <dd>
-                        <a href="https://www.psimetals.de">PSI Metals GmbH, Berlin</a>
-                    </dd>
-                    <dd>Implementation of an automated release history update in the internal wiki upon a new software release</dd>
+                <dt>06/2021 &mdash; 10/2021</dt>
+                <dd>
+                    <a href="https://www.berlin.de/ba-pankow/politik-und-verwaltung/aemter/gesundheitsamt">
+                        Gesundheitsamt Pankow <i>(Public Health Office Pankow)</i>, Berlin
+                    </a>
+                </dd>
+                <dd>
+                    Automation and streamlining of workflows for early detection and management of SARS-CoV-2 infection
+                    chains
+                </dd>
+                <dd>
+                    <cv-tag>PowerShell</cv-tag>
+                </dd>
 
-                    <dt>01/2016 &mdash; 07/2016</dt>
-                    <dd>
-                        <a href="https://www.interactive-tools.de/">interactive tools GmbH, Berlin</a>
-                    </dd>
-                    <dd>Enhancements to the CI/CD workflows and participation in web development projects</dd>
+                <dt>04/2020 &mdash; 03/2021</dt>
+                <dd>
+                    <a href="https://neurologie.charite.de/forschung/arbeitsgruppen/bewegungsstoerungen_andrea_kuehn">
+                        Department of Neurology, Charité &mdash; Universitätsmedizin Berlin
+                    </a>
+                </dd>
+                <dd>
+                    Automated report generation for outpatient deep brain stimulation visits and development of a web
+                    app for
+                    domain-specific patient information management
+                </dd>
+                <dd>
+                    <cv-tag>TypeScript</cv-tag>
+                    <cv-tag>Vue.js</cv-tag>
+                    <cv-tag>Docker</cv-tag>
+                </dd>
 
-                    <dt>10/2013 &mdash; 05/2015</dt>
-                    <dd>
-                        <a href="https://www.psimetals.de">PSI Metals GmbH, Berlin</a>
-                    </dd>
-                    <dd>
-                        Automation and parametrisation of various build, installation and test workflows and maintenance of the internal GUI
-                        framework
-                    </dd>
+                <dt>06/2015 &mdash; 12/2019</dt>
+                <dd>
+                    <a href="https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi">
+                        Knowledge Management in Bioinformatics, Humboldt-Universität zu Berlin
+                    </a>
+                </dd>
+                <dd>
+                    Collaboration in various research projects and work as a tutor in different courses at the chair of
+                    &ldquo;Knowledge
+                    Management in Bioinformatics&rdquo; led by Prof. Dr. Ulf Leser
+                </dd>
+                <dd>
+                    <cv-tag>Java</cv-tag>
+                    <cv-tag>TypeScript</cv-tag>
+                    <cv-tag>Angular</cv-tag>
+                    <cv-tag>PostgreSQL</cv-tag>
+                    <cv-tag>MySQL</cv-tag>
+                    <cv-tag>Docker</cv-tag>
+                    <cv-tag>Lucene</cv-tag>
+                    <cv-tag>LaTeX</cv-tag>
+                </dd>
 
-                    <dt>02/2013 &mdash; 06/2013</dt>
-                    <dd>
-                        <a href="https://kantiko.com">kantiko GmbH, Berlin</a>
-                    </dd>
-                    <dd>
-                        Collaboration in the development of a web application providing small and medium-sized businesses with a simple
-                        means to perform their accounting
-                    </dd>
-                </dl>
-            </section>
+                <dt>08/2016 &mdash; 11/2016</dt>
+                <dd>
+                    <a href="https://www.psimetals.de">PSI Metals GmbH, Berlin</a>
+                </dd>
+                <dd>Implementation of an automated release history update in the internal wiki upon a new software
+                    release</dd>
+                <dd>
+                    <cv-tag>Linux Kernel Module</cv-tag>
+                    <cv-tag>C</cv-tag>
+                    <cv-tag>JavaScript</cv-tag>
+                    <cv-tag>XML</cv-tag>
+                    <cv-tag>Java</cv-tag>
+                </dd>
 
-            <section>
-                <h2>Languages</h2>
+                <dt>01/2016 &mdash; 07/2016</dt>
+                <dd>
+                    <a href="https://www.interactive-tools.de/">interactive tools GmbH, Berlin</a>
+                </dd>
+                <dd>Enhancements to the CI/CD workflows and participation in web development projects</dd>
+                <dd>
+                    <cv-tag>JavaScript</cv-tag>
+                    <cv-tag>TypeScript</cv-tag>
+                    <cv-tag>Vagrant</cv-tag>
+                    <cv-tag>PHP</cv-tag>
+                </dd>
 
-                <dl>
-                    <dt>Natural</dt>
-                    <dd>German (native speaker), English (fluent in spoken and written)</dd>
+                <dt>10/2013 &mdash; 05/2015</dt>
+                <dd>
+                    <a href="https://www.psimetals.de">PSI Metals GmbH, Berlin</a>
+                </dd>
+                <dd>
+                    Automation and parametrisation of various build, installation and test workflows and maintenance of
+                    the internal GUI
+                    framework
+                </dd>
+                <dd>
+                    <cv-tag>Java</cv-tag>
+                    <cv-tag>SQL</cv-tag>
+                    <cv-tag>PL/SQL</cv-tag>
+                </dd>
 
-                    <dt>Programming</dt>
-                    <dd>TypeScript, SQL, C, Java, Python, C#, Erlang, HTML, CSS, &hellip;</dd>
+                <dt>02/2013 &mdash; 06/2013</dt>
+                <dd>
+                    <a href="https://kantiko.com">kantiko GmbH, Berlin</a>
+                </dd>
+                <dd>
+                    Collaboration in the development of a web application providing small and medium-sized businesses
+                    with a simple
+                    means to perform their accounting
+                </dd>
+                <dd>
+                    <cv-tag>C#</cv-tag>
+                    <cv-tag>ASP.NET</cv-tag>
+                    <cv-tag>JavaScript</cv-tag>
+                    <cv-tag>XML</cv-tag>
+                </dd>
+            </dl>
+        </section>
 
-                    <dt>Technologies</dt>
-                    <dd>Node.js, React, Angular, Docker, REST, Lucene, Hibernate, &hellip;</dd>
-                </dl>
-            </section>
+        <section>
+            <h2>Languages</h2>
 
-            <section>
-                <h2>Publications</h2>
+            <dl>
+                <dt>Natural</dt>
+                <dd>German (native speaker), English (fluent in spoken and written)</dd>
 
-                <dl>
-                    <dt>Author</dt>
-                    <dd>
-                        <ul>
-                            <li class="reference">
-                                <span class="author">Wiegandt, David Luis, et al.</span>
-                                <a class="title" href="https://api.semanticscholar.org/CorpusID:7774955">
-                                    Graph n-grams for Scientific Workflow Similarity Search
-                                </a>
-                                <span class="journal">LWDA</span>
-                                <span class="date">2016</span>
-                                <span class="pages">1-12</span>
-                            </li>
-                        </ul>
-                    </dd>
+                <dt>Programming</dt>
+                <dd>
+                    <cv-tag>TypeScript</cv-tag>
+                    <cv-tag>Java</cv-tag>
+                    <cv-tag>SQL</cv-tag>
+                    <cv-tag>C</cv-tag>
+                    <cv-tag>C&num;</cv-tag>
+                    <cv-tag>Python</cv-tag>
+                    <cv-tag>Erlang</cv-tag>
+                    <cv-tag>HTML</cv-tag>
+                    <cv-tag>CSS</cv-tag>
+                    <cv-tag></cv-tag>
+                </dd>
 
-                    <dt>Co-Author</dt>
-                    <dd>
-                        <ul>
-                            <li class="reference">
-                                <span class="author">Habibi, Maryam, et al.</span>
-                                <a class="title" href="https://doi.org/10.1016/j.bdr.2020.100133">
-                                    PatSeg: A Sequential Patent Segmentation Approach
-                                </a>
-                                <span class="journal">Big Data Research 19-20</span>
-                                <span class="date">2020</span>
-                                <span class="pages">100133</span>
-                            </li>
+                <dt>Technologies</dt>
+                <dd>
+                    <cv-tag>Node.js</cv-tag>
+                    <cv-tag>React</cv-tag>
+                    <cv-tag>Angular</cv-tag>
+                    <cv-tag>Vue.js</cv-tag>
+                    <cv-tag>PostgreSQL</cv-tag>
+                    <cv-tag>MongoDB</cv-tag>
+                    <cv-tag>Docker</cv-tag>
+                    <cv-tag>REST</cv-tag>
+                    <cv-tag>Lucene</cv-tag>
+                    <cv-tag>Hibernate</cv-tag>
+                    <cv-tag></cv-tag>
+                </dd>
+            </dl>
+        </section>
 
-                            <li class="reference">
-                                <span class="author">Ševa, Jurica, et al.</span>
-                                <a class="title" href="https://doi.org/10.1186/s12859-019-2958-3">
-                                    VIST - A Variant-Information Search Tool for precisiononcology
-                                </a>
-                                <span class="journal">BMC Bioinformatics 20.1</span>
-                                <span class="date">2019</span>
-                                <span class="pages">429</span>
-                            </li>
+        <section>
+            <h2>Publications</h2>
 
-                            <li class="reference">
-                                <span class="author">Pallarz, Steffen, et al.</span>
-                                <a class="title" href="https://doi.org/10.1200/PO.18.00371">
-                                    Comparative Analysis of Public Knowledge Bases for Precision Oncology
-                                </a>
-                                <span class="journal">JCO Precision Oncology 3</span>
-                                <span class="date">2019</span>
-                                <span class="pages">1-8</span>
-                            </li>
+            <dl>
+                <dt>Author</dt>
+                <dd>
+                    <ul>
+                        <li class="reference">
+                            <span class="author">Wiegandt, David Luis, et al.</span>
+                            <a class="title" href="https://api.semanticscholar.org/CorpusID:7774955">
+                                Graph n-grams for Scientific Workflow Similarity Search
+                            </a>
+                            <span class="journal">LWDA</span>
+                            <span class="date">2016</span>
+                            <span class="pages">1-12</span>
+                        </li>
+                    </ul>
+                </dd>
 
-                            <li class="reference">
-                                <span class="author">Habibi, Maryam, et al.</span>
-                                <a class="title" href="https://doi.org/10.1093/bioinformatics/btx228">
-                                    Deep learning with word embeddings improves biomedical named entity recognition
-                                </a>
-                                <span class="journal">Bioinformatics 33.14</span>
-                                <span class="date">2017</span>
-                                <span class="pages">i37-i48</span>
-                            </li>
+                <dt>Co-Author</dt>
+                <dd>
+                    <ul>
+                        <li class="reference">
+                            <span class="author">Habibi, Maryam, et al.</span>
+                            <a class="title" href="https://doi.org/10.1016/j.bdr.2020.100133">
+                                PatSeg: A Sequential Patent Segmentation Approach
+                            </a>
+                            <span class="journal">Big Data Research 19-20</span>
+                            <span class="date">2020</span>
+                            <span class="pages">100133</span>
+                        </li>
 
-                            <li class="reference">
-                                <span class="author">Habibi, Maryam, et al.</span>
-                                <a class="title" href="https://doi.org/10.1186/s13321-016-0172-0">
-                                    Recognizing chemicals in patents: a comparative analysis
-                                </a>
-                                <span class="journal">Journal of Cheminformatics 8.1</span>
-                                <span class="date">2016</span>
-                                <span class="pages">59</span>
-                            </li>
+                        <li class="reference">
+                            <span class="author">Ševa, Jurica, et al.</span>
+                            <a class="title" href="https://doi.org/10.1186/s12859-019-2958-3">
+                                VIST - A Variant-Information Search Tool for precisiononcology
+                            </a>
+                            <span class="journal">BMC Bioinformatics 20.1</span>
+                            <span class="date">2019</span>
+                            <span class="pages">429</span>
+                        </li>
 
-                            <li class="reference">
-                                <span class="author">Habibi, Maryam, et al.</span>
-                                <a class="title" href="https://api.semanticscholar.org/CorpusID:2808834">
-                                    Performance of Gene Name Recognition Tools on Patents
-                                </a>
-                                <span class="journal">SMBM</span>
-                                <span class="date">2016</span>
-                                <span class="pages">3-10</span>
-                            </li>
-                        </ul>
-                    </dd>
-                </dl>
-            </section>
-        </article>
-    </body>
+                        <li class="reference">
+                            <span class="author">Pallarz, Steffen, et al.</span>
+                            <a class="title" href="https://doi.org/10.1200/PO.18.00371">
+                                Comparative Analysis of Public Knowledge Bases for Precision Oncology
+                            </a>
+                            <span class="journal">JCO Precision Oncology 3</span>
+                            <span class="date">2019</span>
+                            <span class="pages">1-8</span>
+                        </li>
+
+                        <li class="reference">
+                            <span class="author">Habibi, Maryam, et al.</span>
+                            <a class="title" href="https://doi.org/10.1093/bioinformatics/btx228">
+                                Deep learning with word embeddings improves biomedical named entity recognition
+                            </a>
+                            <span class="journal">Bioinformatics 33.14</span>
+                            <span class="date">2017</span>
+                            <span class="pages">i37-i48</span>
+                        </li>
+
+                        <li class="reference">
+                            <span class="author">Habibi, Maryam, et al.</span>
+                            <a class="title" href="https://doi.org/10.1186/s13321-016-0172-0">
+                                Recognizing chemicals in patents: a comparative analysis
+                            </a>
+                            <span class="journal">Journal of Cheminformatics 8.1</span>
+                            <span class="date">2016</span>
+                            <span class="pages">59</span>
+                        </li>
+
+                        <li class="reference">
+                            <span class="author">Habibi, Maryam, et al.</span>
+                            <a class="title" href="https://api.semanticscholar.org/CorpusID:2808834">
+                                Performance of Gene Name Recognition Tools on Patents
+                            </a>
+                            <span class="journal">SMBM</span>
+                            <span class="date">2016</span>
+                            <span class="pages">3-10</span>
+                        </li>
+                    </ul>
+                </dd>
+            </dl>
+        </section>
+    </article>
+</body>
+
 </html>
