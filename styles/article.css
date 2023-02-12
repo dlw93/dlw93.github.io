@@ -4,13 +4,6 @@ article {
     gap: 1.5em;
 }
 
-article > h1 {
-    font-size: 2.4em;
-    font-style: normal;
-    font-weight: 900;
-    margin: 1em 0;
-}
-
 article > section {
     display: flex;
     flex-direction: column;

@@ -1,46 +1,65 @@
-const tagName = (name) => `cv-${name}`;
-
-function register(Constructor) {
-    if ("templateId" in Constructor && typeof Constructor.templateId === "string") {
-        customElements.define(Constructor.templateId, Constructor);
+/**
+ * @param {typeof HTMLElement} constructor 
+ * @returns {void}
+ */
+function registerComponent(constructor) {
+    if ("id" in constructor && typeof constructor.id === "string") {
+        customElements.define(constructor.id, constructor);
     }
 }
 
-class TagElement extends HTMLElement {
-    static #templateId = tagName("tag");
-    static #template = document.getElementById(this.#templateId).content;
+/**
+ * A utility function to register a custom element specified by a `<template>`-tag with no further logic
+ * 
+ * @param {string} id 
+ */
+function registerTemplate(id) {
+    class CVElement extends HTMLElement {
+        /**
+         * @type {HTMLTemplateElement}
+         */
+        static #template = document.getElementById(id);
 
-    #shadowRoot;
+        constructor() {
+            super();
+
+            const shadowRoot = this.attachShadow({ mode: "closed" });
+            shadowRoot.appendChild(CVElement.#template.content.cloneNode(true));
+        }
+    }
+
+    customElements.define(id, CVElement);
+}
+
+class SectionTitleElement extends HTMLElement {
+    static #template = document.getElementById("cv-section-title");
+    static #style = this.#template.content.querySelector("style");
 
     constructor() {
         super();
 
-        this.#shadowRoot = this.attachShadow({ mode: "closed" });
-        this.#shadowRoot.appendChild(TagElement.#template.cloneNode(true));
+        const [, ...spans] = this.textContent?.split(" ")?.flatMap(word => {
+            const span = document.createElement("span");
+            span.textContent = word;
+            return [document.createTextNode(" "), span];
+        });
+
+        const header = document.createElement(`h${this.level}`);
+        header.append(...spans);
+
+        const shadowRoot = this.attachShadow({ mode: "closed" });
+        shadowRoot.append(SectionTitleElement.#style, header);
     }
 
-    static get templateId() {
-        return TagElement.#templateId;
-    }
-}
-
-class TagListElement extends HTMLElement {
-    static #templateId = tagName("tag-list");
-    static #template = document.getElementById(this.#templateId).content;
-
-    #shadowRoot;
-
-    constructor() {
-        super();
-
-        this.#shadowRoot = this.attachShadow({ mode: "closed" });
-        this.#shadowRoot.appendChild(TagListElement.#template.cloneNode(true));
+    get level() {
+        return this.getAttribute("level") ?? "1";
     }
 
-    static get templateId() {
-        return this.#templateId;
+    static get id() {
+        return this.#template.id;
     }
 }
 
-register(TagElement);
-register(TagListElement);
+registerTemplate("cv-tag");
+registerTemplate("cv-tag-list");
+registerComponent(SectionTitleElement);

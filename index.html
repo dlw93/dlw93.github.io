@@ -11,15 +11,36 @@
 </head>
 
 <body>
+    <template id="cv-section-title">
+        <style>
+            :host {
+                font-family: source-code-pro, monospace;
+                font-size: 1.2em;
+                font-style: normal;
+                font-weight: 900;
+            }
+
+            :nth-child(even) {
+                color: #767171;
+            }
+
+            :nth-child(odd) {
+                color: #404040;
+            }
+        </style>
+    </template>
+
     <template id="cv-tag">
         <style>
             :host {
-                font: normal small-caps 600 0.7rem source-sans, sans-serif;
+                font: normal small-caps 600 0.7rem/1.5 source-sans, sans-serif;
                 color: #fff;
                 background-color: #aeaeae;
-                border: #a8a8a8 .1em solid;
+                border: #ababab .1em solid;
                 border-radius: 0.5rem;
                 padding: 0 0.2rem;
+                min-inline-size: 0.75rem;
+                text-align: center;
             }
         </style>
         <slot>&hellip;</slot>
@@ -36,7 +57,7 @@
     </template>
 
     <article>
-        <h1><span>Curriculum</span>&nbsp;<span>Vitae</span></h1>
+        <cv-section-title level="1">Curriculum Vitae</cv-section-title>
 
         <section>
             <h2>Personal Data</h2>

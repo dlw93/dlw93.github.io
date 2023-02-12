@@ -31,7 +31,6 @@ a {
     text-decoration: none;
 }
 
-h1,
 h2,
 dt {
     font-family: source-code-pro, monospace;
@@ -39,14 +38,6 @@ dt {
 
 dd {
     font-family: source-sans, sans-serif;
-}
-
-h1 > span:nth-child(even) {
-    color: #767171;
-}
-
-h1 > span:nth-child(odd) {
-    color: #404040;
 }
 
 ul {

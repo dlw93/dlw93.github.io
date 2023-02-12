@@ -46,5 +46,7 @@ dl > dt + dd + dd + dd {
 }
 
 dl.detailed dt + dd + dd {
-    margin-block-start: -0.25rem;
+    margin-block-start: -0.1rem;
+    margin-block-end: 0.15rem;
+    line-height: 1rem;
 }
