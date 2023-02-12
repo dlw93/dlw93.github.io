@@ -1,18 +1,11 @@
 @import "./styles/fonts.css";
 @import "./styles/article.css";
+@import "./styles/experience.css";
 @import "./styles/reference.css";
 
 @media print {
-    @page {
-        margin: 0.75in;
-    }
-
-    @page :first {
-        margin-top: 1in;
-    }
-
     body {
-        margin: 0;
+        margin: 0 2in;
     }
 }
 

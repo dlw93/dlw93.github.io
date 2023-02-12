@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width" />
     <title>Curriculum Vitae | David Luis Wiegandt</title>
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico" />
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="/index.css" />
     <script src="/index.js" defer></script>
 </head>
 
@@ -20,7 +20,16 @@
                 border: #a8a8a8 .1em solid;
                 border-radius: 0.5rem;
                 padding: 0 0.2rem;
-                /* cursor: pointer; */
+            }
+        </style>
+        <slot>&hellip;</slot>
+    </template>
+
+    <template id="cv-tag-list">
+        <style>
+            :host {
+                display: flex;
+                column-gap: 0.35rem;
             }
         </style>
         <slot>&hellip;</slot>
@@ -56,10 +65,10 @@
             </dl>
         </section>
 
-        <section class="detailed">
+        <section>
             <h2>Education</h2>
 
-            <dl>
+            <dl class="detailed">
                 <dt>10/2016 &mdash; present</dt>
                 <dd>
                     Master's Studies of Computer Science,
@@ -74,7 +83,8 @@
                     <a href="https://www.hu-berlin.de">Humboldt-Universität zu Berlin</a>
                 </dd>
                 <dd>Bachelor of Science (2.2)</dd>
-                <dd class="indent">Thesis: &ldquo;Local Graph Patterns for Scientific Workflow Similarity Search&rdquo; (graded 1.0)
+                <dd class="indent">Thesis: &ldquo;Local Graph Patterns for Scientific Workflow Similarity Search&rdquo;
+                    (graded 1.0)
                 </dd>
 
                 <dt>08/2004 &mdash; 06/2012</dt>
@@ -83,10 +93,10 @@
             </dl>
         </section>
 
-        <section class="detailed">
+        <section>
             <h2>Work Experience</h2>
 
-            <dl>
+            <dl class="detailed">
                 <dt>06/2022 &mdash; 12/2022</dt>
                 <dd>
                     <a href="https://www.psienergy.de">PSI Energie EE, Berlin</a>
@@ -95,12 +105,14 @@
                     Participation in the development and maintenance of different products
                 </dd>
                 <dd>
-                    <cv-tag>TypeScript</cv-tag>
-                    <cv-tag>Angular</cv-tag>
-                    <cv-tag>C&plus;&plus;</cv-tag>
-                    <cv-tag>Docker</cv-tag>
-                    <cv-tag>Java</cv-tag>
-                    <cv-tag>PowerShell</cv-tag>
+                    <cv-tag-list>
+                        <cv-tag>TypeScript</cv-tag>
+                        <cv-tag>Angular</cv-tag>
+                        <cv-tag>C&plus;&plus;</cv-tag>
+                        <cv-tag>Docker</cv-tag>
+                        <cv-tag>Java</cv-tag>
+                        <cv-tag>PowerShell</cv-tag>
+                    </cv-tag-list>
                 </dd>
 
                 <dt>10/2021 &mdash; 03/2022</dt>
@@ -108,16 +120,17 @@
                     <a href="https://neon.dev">NEON Software Solutions GmbH, Berlin</a>
                 </dd>
                 <dd>
-                    Backend development in different projects, e.g. <a
-                        href="https://www.finanznachrichten.de/nachrichten-2021-09/54032837-pta-news-aurenia-se-berliner-entwickeln-zukunftsweisende-app-karmadise-die-zu-guten-taten-anregt-015.htm">Karmadise</a>
+                    Development of the backend for the mobile app <a href="https://www.karmadise.me">Karmadise</a>
                 </dd>
                 <dd>
-                    <cv-tag>TypeScript</cv-tag>
-                    <cv-tag>MongoDB</cv-tag>
-                    <cv-tag>Docker</cv-tag>
-                    <cv-tag>Node.js</cv-tag>
-                    <cv-tag>Python</cv-tag>
-                    <cv-tag>AWS</cv-tag>
+                    <cv-tag-list>
+                        <cv-tag>TypeScript</cv-tag>
+                        <cv-tag>MongoDB</cv-tag>
+                        <cv-tag>Docker</cv-tag>
+                        <cv-tag>Node.js</cv-tag>
+                        <cv-tag>Python</cv-tag>
+                        <cv-tag>AWS</cv-tag>
+                    </cv-tag-list>
                 </dd>
 
                 <dt>06/2021 &mdash; 10/2021</dt>
@@ -131,7 +144,9 @@
                     chains
                 </dd>
                 <dd>
-                    <cv-tag>PowerShell</cv-tag>
+                    <cv-tag-list>
+                        <cv-tag>PowerShell</cv-tag>
+                    </cv-tag-list>
                 </dd>
 
                 <dt>04/2020 &mdash; 03/2021</dt>
@@ -142,13 +157,14 @@
                 </dd>
                 <dd>
                     Automated report generation for outpatient deep brain stimulation visits and development of a web
-                    app for
-                    domain-specific patient information management
+                    app for domain-specific patient information management
                 </dd>
                 <dd>
-                    <cv-tag>TypeScript</cv-tag>
-                    <cv-tag>Vue.js</cv-tag>
-                    <cv-tag>Docker</cv-tag>
+                    <cv-tag-list>
+                        <cv-tag>TypeScript</cv-tag>
+                        <cv-tag>Vue.js</cv-tag>
+                        <cv-tag>Docker</cv-tag>
+                    </cv-tag-list>
                 </dd>
 
                 <dt>06/2015 &mdash; 12/2019</dt>
@@ -159,32 +175,37 @@
                 </dd>
                 <dd>
                     Collaboration in various research projects and work as a tutor in different courses at the chair of
-                    &ldquo;Knowledge
-                    Management in Bioinformatics&rdquo; led by Prof. Dr. Ulf Leser
+                    &ldquo;Knowledge Management in Bioinformatics&rdquo; led by Prof. Dr. Ulf Leser
                 </dd>
                 <dd>
-                    <cv-tag>Java</cv-tag>
-                    <cv-tag>TypeScript</cv-tag>
-                    <cv-tag>Angular</cv-tag>
-                    <cv-tag>PostgreSQL</cv-tag>
-                    <cv-tag>MySQL</cv-tag>
-                    <cv-tag>Docker</cv-tag>
-                    <cv-tag>Lucene</cv-tag>
-                    <cv-tag>LaTeX</cv-tag>
+                    <cv-tag-list>
+                        <cv-tag>Java</cv-tag>
+                        <cv-tag>TypeScript</cv-tag>
+                        <cv-tag>Angular</cv-tag>
+                        <cv-tag>PostgreSQL</cv-tag>
+                        <cv-tag>MySQL</cv-tag>
+                        <cv-tag>Docker</cv-tag>
+                        <cv-tag>Lucene</cv-tag>
+                        <cv-tag>LaTeX</cv-tag>
+                    </cv-tag-list>
                 </dd>
 
                 <dt>08/2016 &mdash; 11/2016</dt>
                 <dd>
                     <a href="https://www.psimetals.de">PSI Metals GmbH, Berlin</a>
                 </dd>
-                <dd>Implementation of an automated release history update in the internal wiki upon a new software
-                    release</dd>
                 <dd>
-                    <cv-tag>Linux Kernel Module</cv-tag>
-                    <cv-tag>C</cv-tag>
-                    <cv-tag>JavaScript</cv-tag>
-                    <cv-tag>XML</cv-tag>
-                    <cv-tag>Java</cv-tag>
+                    Implementation of an automated release history update in the internal wiki upon a new software
+                    release
+                </dd>
+                <dd>
+                    <cv-tag-list>
+                        <cv-tag>Linux Kernel Module</cv-tag>
+                        <cv-tag>C</cv-tag>
+                        <cv-tag>JavaScript</cv-tag>
+                        <cv-tag>XML</cv-tag>
+                        <cv-tag>Java</cv-tag>
+                    </cv-tag-list>
                 </dd>
 
                 <dt>01/2016 &mdash; 07/2016</dt>
@@ -193,10 +214,12 @@
                 </dd>
                 <dd>Enhancements to the CI/CD workflows and participation in web development projects</dd>
                 <dd>
-                    <cv-tag>JavaScript</cv-tag>
-                    <cv-tag>TypeScript</cv-tag>
-                    <cv-tag>Vagrant</cv-tag>
-                    <cv-tag>PHP</cv-tag>
+                    <cv-tag-list>
+                        <cv-tag>JavaScript</cv-tag>
+                        <cv-tag>TypeScript</cv-tag>
+                        <cv-tag>Vagrant</cv-tag>
+                        <cv-tag>PHP</cv-tag>
+                    </cv-tag-list>
                 </dd>
 
                 <dt>10/2013 &mdash; 05/2015</dt>
@@ -205,13 +228,14 @@
                 </dd>
                 <dd>
                     Automation and parametrisation of various build, installation and test workflows and maintenance of
-                    the internal GUI
-                    framework
+                    the internal GUI framework
                 </dd>
                 <dd>
-                    <cv-tag>Java</cv-tag>
-                    <cv-tag>SQL</cv-tag>
-                    <cv-tag>PL/SQL</cv-tag>
+                    <cv-tag-list>
+                        <cv-tag>Java</cv-tag>
+                        <cv-tag>SQL</cv-tag>
+                        <cv-tag>PL/SQL</cv-tag>
+                    </cv-tag-list>
                 </dd>
 
                 <dt>02/2013 &mdash; 06/2013</dt>
@@ -220,14 +244,15 @@
                 </dd>
                 <dd>
                     Collaboration in the development of a web application providing small and medium-sized businesses
-                    with a simple
-                    means to perform their accounting
+                    with a simple means to perform their accounting
                 </dd>
                 <dd>
-                    <cv-tag>C#</cv-tag>
-                    <cv-tag>ASP.NET</cv-tag>
-                    <cv-tag>JavaScript</cv-tag>
-                    <cv-tag>XML</cv-tag>
+                    <cv-tag-list>
+                        <cv-tag>C&num;</cv-tag>
+                        <cv-tag>ASP.NET</cv-tag>
+                        <cv-tag>JavaScript</cv-tag>
+                        <cv-tag>XML</cv-tag>
+                    </cv-tag-list>
                 </dd>
             </dl>
         </section>
@@ -241,31 +266,35 @@
 
                 <dt>Programming</dt>
                 <dd>
-                    <cv-tag>TypeScript</cv-tag>
-                    <cv-tag>Java</cv-tag>
-                    <cv-tag>SQL</cv-tag>
-                    <cv-tag>C</cv-tag>
-                    <cv-tag>C&num;</cv-tag>
-                    <cv-tag>Python</cv-tag>
-                    <cv-tag>Erlang</cv-tag>
-                    <cv-tag>HTML</cv-tag>
-                    <cv-tag>CSS</cv-tag>
-                    <cv-tag></cv-tag>
+                    <cv-tag-list>
+                        <cv-tag>TypeScript</cv-tag>
+                        <cv-tag>Java</cv-tag>
+                        <cv-tag>SQL</cv-tag>
+                        <cv-tag>C</cv-tag>
+                        <cv-tag>C&num;</cv-tag>
+                        <cv-tag>Python</cv-tag>
+                        <cv-tag>Erlang</cv-tag>
+                        <cv-tag>HTML</cv-tag>
+                        <cv-tag>CSS</cv-tag>
+                        <cv-tag></cv-tag>
+                    </cv-tag-list>
                 </dd>
 
                 <dt>Technologies</dt>
                 <dd>
-                    <cv-tag>Node.js</cv-tag>
-                    <cv-tag>React</cv-tag>
-                    <cv-tag>Angular</cv-tag>
-                    <cv-tag>Vue.js</cv-tag>
-                    <cv-tag>PostgreSQL</cv-tag>
-                    <cv-tag>MongoDB</cv-tag>
-                    <cv-tag>Docker</cv-tag>
-                    <cv-tag>REST</cv-tag>
-                    <cv-tag>Lucene</cv-tag>
-                    <cv-tag>Hibernate</cv-tag>
-                    <cv-tag></cv-tag>
+                    <cv-tag-list>
+                        <cv-tag>Node.js</cv-tag>
+                        <cv-tag>React</cv-tag>
+                        <cv-tag>Angular</cv-tag>
+                        <cv-tag>Vue.js</cv-tag>
+                        <cv-tag>PostgreSQL</cv-tag>
+                        <cv-tag>MongoDB</cv-tag>
+                        <cv-tag>Docker</cv-tag>
+                        <cv-tag>REST</cv-tag>
+                        <cv-tag>Lucene</cv-tag>
+                        <cv-tag>Hibernate</cv-tag>
+                        <cv-tag></cv-tag>
+                    </cv-tag-list>
                 </dd>
             </dl>
         </section>

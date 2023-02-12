@@ -1,0 +1,50 @@
+dl {
+    display: grid;
+    grid-template-columns: minmax(140px, auto) 1fr;
+    grid-auto-rows: auto;
+    column-gap: 1.5em;
+    row-gap: 0.5em;
+    align-items: baseline;
+    margin: 0 0 0 0.1em;
+}
+
+dl.detailed {
+    row-gap: 0.15em;
+}
+
+dl > dt {
+    font-size: 0.75em;
+    font-weight: 600;
+    grid-column: 1;
+}
+
+dl > dt ~ dd {
+    font-size: 0.85em;
+    grid-column: 2;
+    margin: 0;
+}
+
+dl > dt ~ dd.indent {
+    margin-inline-start: 1em;
+}
+
+dl > dt + dd {
+    font-style: normal;
+}
+
+dl.detailed dt + dd {
+    font-weight: 600;
+}
+
+dl.detailed dt + dd:not(:first-of-type) {
+    margin-block-start: 0.5rem;
+}
+
+dl > dt + dd + dd,
+dl > dt + dd + dd + dd {
+    font-style: italic;
+}
+
+dl.detailed dt + dd + dd {
+    margin-block-start: -0.25rem;
+}
