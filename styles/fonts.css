@@ -6,6 +6,12 @@
 
 @font-face {
     font-family: source-code-pro;
+    font-weight: 700;
+    src: url("/assets/fonts/SourceCodePro-Bold.ttf.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: source-code-pro;
     font-weight: 900;
     src: url("/assets/fonts/SourceCodePro-Black.ttf.woff2") format("woff2");
 }

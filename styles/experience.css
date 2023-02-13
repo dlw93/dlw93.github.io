@@ -13,12 +13,14 @@ dl.detailed {
 }
 
 dl > dt {
+    font-family: source-code-pro, monospace;
     font-size: 0.75em;
     font-weight: 600;
     grid-column: 1;
 }
 
 dl > dt ~ dd {
+    font-family: source-sans, sans-serif;
     font-size: 0.85em;
     grid-column: 2;
     margin: 0;
@@ -47,6 +49,6 @@ dl > dt + dd + dd + dd {
 
 dl.detailed dt + dd + dd {
     margin-block-start: -0.1rem;
-    margin-block-end: 0.15rem;
+    margin-block-end: 0.1rem;
     line-height: 1rem;
 }

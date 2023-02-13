@@ -11,32 +11,67 @@
 </head>
 
 <body>
-    <template id="cv-section-title">
+    <template id="cv-section">
         <style>
             :host {
+                --fg-color-light: #767171;
+                --fg-color-dark: #404040;
+                --fg-color-medium: #525252;
                 font-family: source-code-pro, monospace;
-                font-size: 1.2em;
                 font-style: normal;
+            }
+
+            h1 {
+                font-size: 2.5em;
                 font-weight: 900;
             }
 
-            :nth-child(even) {
-                color: #767171;
+            h1 :nth-child(even) {
+                color: var(--fg-color-light);
             }
 
-            :nth-child(odd) {
-                color: #404040;
+            h1 :nth-child(odd) {
+                color: var(--fg-color-dark);
+            }
+
+            h1::first-letter {
+                margin-inline-start: -0.05em;
+            }
+
+            h2 {
+                font-size: 1.35em;
+                font-weight: 700;
+                color: var(--fg-color-medium);
+                letter-spacing: -0.025em;
+            }
+
+            h2::first-letter {
+                margin-inline-start: 0.025em;
+            }
+
+            section {
+                display: flex;
+                flex-direction: column;
+            }
+
+            section > :first-child {
+                margin: 1.5em 0 0.75em 0;
             }
         </style>
+
+        <section>
+            <slot></slot>
+        </section>
     </template>
 
     <template id="cv-tag">
         <style>
             :host {
+                --tag-color: #aeaeae;
                 font: normal small-caps 600 0.7rem/1.5 source-sans, sans-serif;
                 color: #fff;
-                background-color: #aeaeae;
-                border: #ababab .1em solid;
+                background-color: var(--tag-color);
+                border: var(--tag-color) 0.1em solid;
                 border-radius: 0.5rem;
                 padding: 0 0.2rem;
                 min-inline-size: 0.75rem;
@@ -56,12 +91,9 @@
         <slot>&hellip;</slot>
     </template>
 
-    <article>
-        <cv-section-title level="1">Curriculum Vitae</cv-section-title>
+    <cv-section title="Curriculum Vitae">
 
-        <section>
-            <h2>Personal Data</h2>
-
+        <cv-section title="Personal Data">
             <dl>
                 <dt>Name</dt>
                 <dd>David Luis Wiegandt</dd>
@@ -84,11 +116,9 @@
                     <a href="https://www.linkedin.com/in/dlwiegandt">www.linkedin.com/in/dlwiegandt</a>
                 </dd>
             </dl>
-        </section>
+        </cv-section>
 
-        <section>
-            <h2>Education</h2>
-
+        <cv-section title="Education">
             <dl class="detailed">
                 <dt>10/2016 &mdash; present</dt>
                 <dd>
@@ -96,7 +126,8 @@
                     <a href="https://www.hu-berlin.de">Humboldt-Universität zu Berlin</a>
                 </dd>
                 <dd>Current average grade of 1.1</dd>
-                <dd class="indent">Thesis: &ldquo;Distributed Instance-Optimal Join Processing&rdquo; (in progress)</dd>
+                <dd class="indent">Thesis: &ldquo;Distributed Instance-Optimal Join Processing&rdquo; (in progress)
+                </dd>
 
                 <dt>10/2012 &mdash; 06/2016</dt>
                 <dd>
@@ -104,7 +135,8 @@
                     <a href="https://www.hu-berlin.de">Humboldt-Universität zu Berlin</a>
                 </dd>
                 <dd>Bachelor of Science (2.2)</dd>
-                <dd class="indent">Thesis: &ldquo;Local Graph Patterns for Scientific Workflow Similarity Search&rdquo;
+                <dd class="indent">Thesis: &ldquo;Local Graph Patterns for Scientific Workflow Similarity
+                    Search&rdquo;
                     (graded 1.0)
                 </dd>
 
@@ -112,11 +144,9 @@
                 <dd><a href="https://www.plg-berlin.de">Primo-Levi-Gymnasium</a>, Berlin</dd>
                 <dd>Abitur (2.2)</dd>
             </dl>
-        </section>
+        </cv-section>
 
-        <section>
-            <h2>Work Experience</h2>
-
+        <cv-section title="Work Experience">
             <dl class="detailed">
                 <dt>06/2022 &mdash; 12/2022</dt>
                 <dd>
@@ -185,6 +215,7 @@
                         <cv-tag>TypeScript</cv-tag>
                         <cv-tag>Vue.js</cv-tag>
                         <cv-tag>Docker</cv-tag>
+                        <cv-tag>PDF</cv-tag>
                     </cv-tag-list>
                 </dd>
 
@@ -238,6 +269,7 @@
                     <cv-tag-list>
                         <cv-tag>JavaScript</cv-tag>
                         <cv-tag>TypeScript</cv-tag>
+                        <cv-tag>SonarQube</cv-tag>
                         <cv-tag>Vagrant</cv-tag>
                         <cv-tag>PHP</cv-tag>
                     </cv-tag-list>
@@ -254,8 +286,11 @@
                 <dd>
                     <cv-tag-list>
                         <cv-tag>Java</cv-tag>
+                        <cv-tag>Hibernate</cv-tag>
                         <cv-tag>SQL</cv-tag>
                         <cv-tag>PL/SQL</cv-tag>
+                        <cv-tag>Jenkins</cv-tag>
+                        <cv-tag>SonarQube</cv-tag>
                     </cv-tag-list>
                 </dd>
 
@@ -276,11 +311,9 @@
                     </cv-tag-list>
                 </dd>
             </dl>
-        </section>
+        </cv-section>
 
-        <section>
-            <h2>Languages</h2>
-
+        <cv-section title="Languages">
             <dl>
                 <dt>Natural</dt>
                 <dd><b>German</b> (native speaker), <b>English</b> (fluent in spoken and written)</dd>
@@ -318,11 +351,9 @@
                     </cv-tag-list>
                 </dd>
             </dl>
-        </section>
+        </cv-section>
 
-        <section>
-            <h2>Publications</h2>
-
+        <cv-section title="Publications">
             <dl>
                 <dt>Author</dt>
                 <dd>
@@ -404,8 +435,9 @@
                     </ul>
                 </dd>
             </dl>
-        </section>
-    </article>
+        </cv-section>
+
+    </cv-section>
 </body>
 
 </html>

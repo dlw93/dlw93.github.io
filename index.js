@@ -31,28 +31,47 @@ function registerTemplate(id) {
     customElements.define(id, CVElement);
 }
 
-class SectionTitleElement extends HTMLElement {
-    static #template = document.getElementById("cv-section-title");
-    static #style = this.#template.content.querySelector("style");
+class SectionElement extends HTMLElement {
+    /**
+     * @type {HTMLTemplateElement}
+     */
+    static #template = document.getElementById("cv-section");
+
+    /**
+     * @type {number}
+     */
+    #depth = (this.parentElement.closest(SectionElement.id)?.depth ?? 0) + 1;
 
     constructor() {
         super();
 
-        const [, ...spans] = this.textContent?.split(" ")?.flatMap(word => {
+        const [, ...words] = this.title.split(" ").flatMap(word => {
             const span = document.createElement("span");
             span.textContent = word;
             return [document.createTextNode(" "), span];
         });
 
-        const header = document.createElement(`h${this.level}`);
-        header.append(...spans);
+        const heading = document.createElement(`h${this.level}`);
+        heading.append(...words);
+
+        const content = SectionElement.#template.content.cloneNode(true);
+        const section = content.querySelector("section");
+        section.prepend(heading);
 
         const shadowRoot = this.attachShadow({ mode: "closed" });
-        shadowRoot.append(SectionTitleElement.#style, header);
+        shadowRoot.appendChild(content);
+    }
+
+    get title() {
+        return this.getAttribute("title") ?? "";
+    }
+
+    get depth() {
+        return this.#depth;
     }
 
     get level() {
-        return this.getAttribute("level") ?? "1";
+        return 1 <= this.#depth ? this.#depth <= 6 ? this.#depth : 6 : 1;
     }
 
     static get id() {
@@ -62,4 +81,4 @@ class SectionTitleElement extends HTMLElement {
 
 registerTemplate("cv-tag");
 registerTemplate("cv-tag-list");
-registerComponent(SectionTitleElement);
+registerComponent(SectionElement);
