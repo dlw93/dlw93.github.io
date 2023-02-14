@@ -1,6 +1,6 @@
-@import "./styles/fonts.css";
-@import "./styles/experience.css";
-@import "./styles/reference.css";
+@import "./fonts.css";
+@import "./experience.css";
+@import "./reference.css";
 
 @media print {
     body > cv-section {

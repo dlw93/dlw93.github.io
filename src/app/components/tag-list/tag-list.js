@@ -1,4 +1,4 @@
-import { Component } from "/component.js";
+import { Component } from "/src/component.js";
 
 const ComponentBase = await Component.create("cv-tag-list", {
     templateUrl: "./tag-list.html",
