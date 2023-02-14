@@ -9,7 +9,7 @@ const ComponentBase = await Component.create("cv-tag", {
 export class TagComponent extends ComponentBase {
     static #tags = new Map();
 
-    constructor() {
+    constructor(content) {
         super();
 
         if (this.textContent) {
@@ -18,7 +18,7 @@ export class TagComponent extends ComponentBase {
         }
 
         const shadowRoot = this.attachShadow({ mode: "closed" });
-        shadowRoot.appendChild(this.content);
+        shadowRoot.appendChild(content);
     }
 
     static get tags() {

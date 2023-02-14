@@ -12,7 +12,7 @@ export class SectionComponent extends ComponentBase {
      */
     #depth = (this.parentElement.closest(SectionComponent.selector)?.depth ?? 0) + 1;
 
-    constructor() {
+    constructor(content) {
         super();
 
         const [, ...words] = this.title.split(" ").flatMap(word => {
@@ -24,11 +24,11 @@ export class SectionComponent extends ComponentBase {
         const heading = document.createElement(`h${this.level}`);
         heading.append(...words);
 
-        const section = this.content.querySelector("section");
+        const section = content.querySelector("section");
         section.prepend(heading);
 
         const shadowRoot = this.attachShadow({ mode: "closed" });
-        shadowRoot.appendChild(this.content);
+        shadowRoot.appendChild(content);
     }
 
     get title() {

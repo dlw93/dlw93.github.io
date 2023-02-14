@@ -7,10 +7,10 @@ const ComponentBase = await Component.create("cv-tag-list", {
 });
 
 export class TagListComponent extends ComponentBase {
-    constructor() {
+    constructor(content) {
         super();
 
         const shadowRoot = this.attachShadow({ mode: "closed" });
-        shadowRoot.appendChild(this.content);
+        shadowRoot.appendChild(content);
     }
 }

@@ -3,7 +3,7 @@ export class Component {
 
     /**
      * @param {string} selector
-     * @param {{url?: string, templateUrl?: string, styleUrl?: string}?} 
+     * @param {{url?: string, templateUrl?: string, styleUrl?: string}?} options
      */
     static async create(selector, { url, templateUrl, styleUrl } = {}) {
         const templateElement = document.createElement("template");
@@ -30,19 +30,17 @@ export class Component {
         }
 
         return class extends HTMLElement {
-            #content = templateElement.content.cloneNode(true);
-
-            get content() {
-                return this.#content;
-            }
-
             static get selector() {
                 return selector;
             }
 
             static async register() {
                 if (!customElements.get(this.selector)) {
-                    customElements.define(this.selector, this);
+                    customElements.define(this.selector, class extends this {
+                        constructor() {
+                            super(templateElement.content.cloneNode(true));
+                        }
+                    });
                 }
                 await customElements.whenDefined(this.selector);
             }
