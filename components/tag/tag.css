@@ -1,0 +1,11 @@
+:host {
+    --tag-color: #aeaeae;
+    font: normal small-caps 600 0.7rem/1.5 source-sans, sans-serif;
+    color: #fff;
+    background-color: var(--tag-color);
+    border: var(--tag-color) 0.1em solid;
+    border-radius: 0.5rem;
+    padding: 0 0.2rem;
+    min-inline-size: 0.75rem;
+    text-align: center;
+}

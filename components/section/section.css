@@ -1,0 +1,44 @@
+:host {
+    --fg-color-light: #767171;
+    --fg-color-dark: #404040;
+    --fg-color-medium: #525252;
+    font-family: source-code-pro, monospace;
+    font-style: normal;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: 900;
+}
+
+h1 :nth-child(even) {
+    color: var(--fg-color-light);
+}
+
+h1 :nth-child(odd) {
+    color: var(--fg-color-dark);
+}
+
+h1::first-letter {
+    margin-inline-start: -0.05em;
+}
+
+h2 {
+    font-size: 1.35em;
+    font-weight: 700;
+    color: var(--fg-color-medium);
+    letter-spacing: -0.025em;
+}
+
+h2::first-letter {
+    margin-inline-start: 0.025em;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+}
+
+section > :first-child {
+    margin: 1.5em 0 0.75em 0;
+}

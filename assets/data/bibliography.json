@@ -1,0 +1,58 @@
+[
+    {
+        "author": "Wiegandt, David Luis, et al.",
+        "title": "Graph n-grams for Scientific Workflow Similarity Search",
+        "journal": "LWDA",
+        "date": "2016",
+        "pages": "1-12",
+        "url": "https://api.semanticscholar.org/CorpusID:7774955"
+    },
+    {
+        "author": "Habibi, Maryam, et al.",
+        "title": "PatSeg: A Sequential Patent Segmentation Approach",
+        "journal": "Big Data Research 19-20",
+        "date": "2020",
+        "pages": "100133",
+        "url": "https://doi.org/10.1016/j.bdr.2020.100133"
+    },
+    {
+        "author": "Ševa, Jurica, et al.",
+        "title": "VIST - A Variant-Information Search Tool for precisiononcology",
+        "journal": "BMC Bioinformatics 20.1",
+        "date": "2019",
+        "pages": "429",
+        "url": "https://doi.org/10.1186/s12859-019-2958-3"
+    },
+    {
+        "author": "Pallarz, Steffen, et al.",
+        "title": "Comparative Analysis of Public Knowledge Bases for Precision Oncology",
+        "journal": "JCO Precision Oncology 3",
+        "date": "2019",
+        "pages": "1-8",
+        "url": "https://doi.org/10.1200/PO.18.00371"
+    },
+    {
+        "author": "Habibi, Maryam, et al.",
+        "title": "Deep learning with word embeddings improves biomedical named entity recognition",
+        "journal": "Bioinformatics 33.14",
+        "date": "2017",
+        "pages": "i37-i48",
+        "url": "https://doi.org/10.1093/bioinformatics/btx228"
+    },
+    {
+        "author": "Habibi, Maryam, et al.",
+        "title": "Recognizing chemicals in patents: a comparative analysis",
+        "journal": "Journal of Cheminformatics 8.1",
+        "date": "2016",
+        "pages": "59",
+        "url": "https://doi.org/10.1186/s13321-016-0172-0"
+    },
+    {
+        "author": "Habibi, Maryam, et al.",
+        "title": "Performance of Gene Name Recognition Tools on Patents",
+        "journal": "SMBM",
+        "date": "2016",
+        "pages": "3-10",
+        "url": "https://api.semanticscholar.org/CorpusID:2808834"
+    }
+]
