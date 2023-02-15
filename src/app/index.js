@@ -1,8 +1,10 @@
-import { SectionComponent, TagComponent, TagListComponent } from "./components/index.js";
+import { BibliographyComponent, ReferenceComponent, SectionComponent, TagComponent, TagListComponent } from "./components/index.js";
 
 await Promise.all([
     TagComponent.register(),
     TagListComponent.register(),
+    BibliographyComponent.register(),
+    ReferenceComponent.register(),
 ]);
 
 // register this one last to ensure nothing gets rendered before (avoids FOUC)
@@ -18,4 +20,4 @@ globalThis.cv = {
 
         console.table(tags);
     },
-}
+};

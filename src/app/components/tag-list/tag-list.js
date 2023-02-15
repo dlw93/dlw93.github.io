@@ -1,7 +1,7 @@
-import { Component } from "/src/component.js";
+import { Component, html } from "/src/component.js";
 
 const ComponentBase = await Component.create("cv-tag-list", {
-    templateUrl: "./tag-list.html",
+    template: html`<slot>&hellip;</slot>`,
     styleUrl: "./tag-list.css",
     ...import.meta,
 });
