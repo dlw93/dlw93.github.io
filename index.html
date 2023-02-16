@@ -238,7 +238,7 @@
         <cv-section title="Languages">
             <dl>
                 <dt>Natural</dt>
-                <dd><b>German</b> (native speaker), <b>English</b> (fluent in spoken and written)</dd>
+                <dd><b>German</b> <i>(native speaker)</i>, <b>English</b> <i>(fluent in spoken and written)</i></dd>
 
                 <dt>Programming</dt>
                 <dd>
@@ -258,11 +258,13 @@
 
                 <dt>Technologies</dt>
                 <dd>
+                    <!-- TODO enable wrapping -->
                     <cv-tag-list>
                         <cv-tag>Node.js</cv-tag>
                         <cv-tag>React</cv-tag>
                         <cv-tag>Angular</cv-tag>
                         <cv-tag>Vue.js</cv-tag>
+                        <cv-tag>Electron</cv-tag>
                         <cv-tag>PostgreSQL</cv-tag>
                         <cv-tag>MongoDB</cv-tag>
                         <cv-tag>Docker</cv-tag>
@@ -279,18 +281,18 @@
             <dl>
                 <dt>Author</dt>
                 <dd>
-                    <cv-bibliography src="/assets/data/bibliography.json" key="author"></cv-bibliography>
+                    <cv-bibliography src="/assets/data/bibliography.json" keyPath="author" counter="bib"></cv-bibliography>
                 </dd>
 
                 <dt>Co-Author</dt>
                 <dd>
-                    <cv-bibliography src="/assets/data/bibliography.json" key="coAuthor"></cv-bibliography>
+                    <cv-bibliography src="/assets/data/bibliography.json" keyPath="coAuthor" counter="bib"></cv-bibliography>
                 </dd>
             </dl>
         </cv-section>
 
     </cv-section>
-    
+
 </body>
 
 </html>

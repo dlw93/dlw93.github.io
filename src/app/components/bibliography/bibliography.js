@@ -1,15 +1,15 @@
 import { Component, html } from "/src/component.js";
 import { element } from "/src/element.js";
-import { Counter } from "/src/app/util/counter.js";
+import { CounterRegistry } from "/src/app/util/counter-registry.js";
 
 const ComponentBase = await Component.create("cv-bibliography", {
     ...import.meta,
-    template: html`<ul><slot></slot></ul>`,
+    template: html`<ol><slot></slot></ol>`,
     styleUrl: "./bibliography.css",
 });
 
 export class BibliographyComponent extends ComponentBase {
-    static #counter = new Counter();
+    static #counterRegistry = new CounterRegistry();
 
     constructor(content) {
         super();
@@ -19,10 +19,11 @@ export class BibliographyComponent extends ComponentBase {
 
         if (this.src) {
             this.#loadBibliography().then(references => {
-                const list = shadowRoot.querySelector("ul");
-                const start = BibliographyComponent.#counter.get(this.counter);
-                list.style["counter-reset"] = `references ${start}`;
+                const list = shadowRoot.querySelector("ol");
+                const counter = BibliographyComponent.#counterRegistry.get(this.counter);
+                list.style["counter-reset"] = `references ${counter(0)}`;
                 list.append(...references);
+                counter(references.length);
             });
         }
     }
@@ -31,8 +32,8 @@ export class BibliographyComponent extends ComponentBase {
         return this.getAttribute("counter") ?? undefined;
     }
 
-    get key() {
-        return this.getAttribute("key");
+    get keyPath() {
+        return this.getAttribute("keyPath");
     }
 
     get src() {
@@ -47,7 +48,7 @@ export class BibliographyComponent extends ComponentBase {
         }
 
         const data = await response.json();
-        const publications = this.key?.split(".")?.reduce((o, k) => o[k], data) ?? data;
+        const publications = this.keyPath?.split(".")?.reduce((o, k) => o[k], data) ?? data;
 
         const reference = element("cv-reference");
         const li = element("li");

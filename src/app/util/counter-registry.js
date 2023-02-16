@@ -2,27 +2,26 @@
  * @template {string} K, 
  * @template {number} V
  */
-export class Counter extends Map {
+export class CounterRegistry extends Map {
     /**
      * @inheritdoc
      * 
      * @param {K} key 
      * @param {number} start 
      * 
-     * @returns {V}
+     * @returns {(increment?: V) => V}
      */
     get(key, start = 0) {
         if (!this.has(key)) {
             this.set(key, this.#counter(start));
         }
-        const counter = super.get(key);
-        return counter();
+        return super.get(key);
     }
 
     #counter(start = 0) {
         let value = start;
-        return function () {
-            return value++;
+        return function (increment = 1) {
+            return value += increment;
         };
     }
 }
