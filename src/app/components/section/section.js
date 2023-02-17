@@ -1,9 +1,9 @@
 import { Component, html } from "/src/component.js";
 
 const ComponentBase = await Component.create("cv-section", {
+    url: "/src/app/components/section/",
     template: html`<section><slot></slot></section>`,
     styleUrl: "./section.css",
-    ...import.meta,
 });
 
 export class SectionComponent extends ComponentBase {
@@ -12,7 +12,7 @@ export class SectionComponent extends ComponentBase {
      */
     #depth = (this.parentElement.closest(SectionComponent.selector)?.depth ?? 0) + 1;
 
-    constructor(content) {
+    constructor() {
         super();
 
         const [, ...words] = this.title.split(" ").flatMap(word => {
@@ -24,11 +24,8 @@ export class SectionComponent extends ComponentBase {
         const heading = document.createElement(`h${this.level}`);
         heading.append(...words);
 
-        const section = content.querySelector("section");
+        const section = this.shadowRoot.querySelector("section");
         section.prepend(heading);
-
-        const shadowRoot = this.attachShadow({ mode: "closed" });
-        shadowRoot.appendChild(content);
     }
 
     get title() {

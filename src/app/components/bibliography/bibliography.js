@@ -3,7 +3,7 @@ import { element } from "/src/element.js";
 import { CounterRegistry } from "/src/app/util/counter-registry.js";
 
 const ComponentBase = await Component.create("cv-bibliography", {
-    ...import.meta,
+    url: "/src/app/components/bibliography/",
     template: html`<ol><slot></slot></ol>`,
     styleUrl: "./bibliography.css",
 });
@@ -11,15 +11,12 @@ const ComponentBase = await Component.create("cv-bibliography", {
 export class BibliographyComponent extends ComponentBase {
     static #counterRegistry = new CounterRegistry();
 
-    constructor(content) {
+    constructor() {
         super();
-
-        const shadowRoot = this.attachShadow({ mode: "open" });
-        shadowRoot.appendChild(content);
 
         if (this.src) {
             this.#loadBibliography().then(references => {
-                const list = shadowRoot.querySelector("ol");
+                const list = this.shadowRoot.querySelector("ol");
                 const counter = BibliographyComponent.#counterRegistry.get(this.counter);
                 list.style["counter-reset"] = `references ${counter(0)}`;
                 list.append(...references);

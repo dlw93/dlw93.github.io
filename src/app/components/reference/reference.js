@@ -1,10 +1,10 @@
 import { Component, html } from "/src/component.js";
 
 const ComponentBase = await Component.create("cv-reference", {
-    ...import.meta,
+    url: "/src/app/components/reference/",
     styleUrl: "./reference.css",
     template: html`
-        <span class="reference">
+        <span>
             <span id="author"></span>
             <a id="title"></a>
             <span id="journal"></span>
@@ -14,11 +14,11 @@ const ComponentBase = await Component.create("cv-reference", {
 });
 
 export class ReferenceComponent extends ComponentBase {
-    constructor(content) {
+    constructor() {
         super();
 
         const ids = ["author", "title", "journal", "date", "pages"];
-        const elements = Object.fromEntries(ids.map(id => [id, content.getElementById(id)]));
+        const elements = Object.fromEntries(ids.map(id => [id, this.shadowRoot.getElementById(id)]));
 
         for (const id in elements) {
             Object.defineProperty(this, id, {
@@ -31,8 +31,5 @@ export class ReferenceComponent extends ComponentBase {
             get: () => elements.title.href,
             set: (value) => elements.title.href = value,
         });
-
-        const shadowRoot = this.attachShadow({ mode: "closed" });
-        shadowRoot.appendChild(content);
     }
 }

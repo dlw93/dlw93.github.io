@@ -1,16 +1,13 @@
-import { Component, html } from "/src/component.js";
+import { Component, html, css } from "/src/component.js";
 
 const ComponentBase = await Component.create("cv-tag-list", {
     template: html`<slot>&hellip;</slot>`,
-    styleUrl: "./tag-list.css",
-    ...import.meta,
+    style: css`
+        :host {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+        }`,
 });
 
-export class TagListComponent extends ComponentBase {
-    constructor(content) {
-        super();
-
-        const shadowRoot = this.attachShadow({ mode: "closed" });
-        shadowRoot.appendChild(content);
-    }
-}
+export class TagListComponent extends ComponentBase { }

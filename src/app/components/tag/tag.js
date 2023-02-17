@@ -1,24 +1,22 @@
 import { Component, html } from "/src/component.js";
 
+// TODO move into Component static part
 const ComponentBase = await Component.create("cv-tag", {
+    url: "/src/app/components/tag/",
     template: html`<slot>&hellip;</slot>`,
     styleUrl: "./tag.css",
-    ...import.meta,
 });
 
 export class TagComponent extends ComponentBase {
     static #tags = new Map();
 
-    constructor(content) {
+    constructor() {
         super();
 
         if (this.textContent) {
             const count = TagComponent.#tags.get(this.textContent) ?? 0;
             TagComponent.#tags.set(this.textContent, count + 1);
         }
-
-        const shadowRoot = this.attachShadow({ mode: "closed" });
-        shadowRoot.appendChild(content);
     }
 
     static get tags() {
