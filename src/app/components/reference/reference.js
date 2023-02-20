@@ -1,8 +1,7 @@
-import { Component, html } from "/src/component.js";
+import { Component, html } from "/src/lib/component.js";
 
 const ComponentBase = await Component.create("cv-reference", {
-    url: "/src/app/components/reference/",
-    styleUrl: "./reference.css",
+    styleUrl: new URL("./reference.css", import.meta.url),
     template: html`
         <span>
             <span id="author"></span>

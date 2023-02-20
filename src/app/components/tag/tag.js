@@ -1,10 +1,8 @@
-import { Component, html } from "/src/component.js";
+import { Component, html } from "/src/lib/component.js";
 
-// TODO move into Component static part
 const ComponentBase = await Component.create("cv-tag", {
-    url: "/src/app/components/tag/",
     template: html`<slot>&hellip;</slot>`,
-    styleUrl: "./tag.css",
+    styleUrl: new URL("./tag.css", import.meta.url),
 });
 
 export class TagComponent extends ComponentBase {

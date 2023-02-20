@@ -1,11 +1,10 @@
-import { Component, html } from "/src/component.js";
-import { element } from "/src/element.js";
-import { CounterRegistry } from "/src/app/util/counter-registry.js";
+import { Component, html } from "/src/lib/component.js";
+import { element } from "/src/lib/element.js";
+import { CounterRegistry } from "../../util/counter-registry.js";
 
 const ComponentBase = await Component.create("cv-bibliography", {
-    url: "/src/app/components/bibliography/",
     template: html`<ol><slot></slot></ol>`,
-    styleUrl: "./bibliography.css",
+    styleUrl: new URL("./bibliography.css", import.meta.url),
 });
 
 export class BibliographyComponent extends ComponentBase {

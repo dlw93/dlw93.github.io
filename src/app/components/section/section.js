@@ -1,9 +1,8 @@
-import { Component, html } from "/src/component.js";
+import { Component, html } from "/src/lib/component.js";
 
 const ComponentBase = await Component.create("cv-section", {
-    url: "/src/app/components/section/",
     template: html`<section><slot></slot></section>`,
-    styleUrl: "./section.css",
+    styleUrl: new URL("./section.css", import.meta.url),
 });
 
 export class SectionComponent extends ComponentBase {

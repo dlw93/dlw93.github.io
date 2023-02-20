@@ -1,4 +1,4 @@
-import { Component, html, css } from "/src/component.js";
+import { Component, html, css } from "/src/lib/component.js";
 
 const ComponentBase = await Component.create("cv-tag-list", {
     template: html`<slot>&hellip;</slot>`,
